@@ -54,3 +54,5 @@ Some sample urls: `https://learning.fraseric.ca/enrolment/enrol?page=1&course=U2
 ## Screenshots
 
 ![](screenshots/fetch-and-check.png)
+
+![](screenshots/notification.png)
