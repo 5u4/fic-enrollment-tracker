@@ -1,0 +1,5 @@
+*.pyc
+.idea
+config.py
+.DS_Store
+.vscode
