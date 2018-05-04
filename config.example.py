@@ -10,8 +10,11 @@ COOKIE = {
     "NVT": ""
 }
 
-# Courses Needs To Be Tracked
+# Courses Need To Be Tracked
 COURSES = []
 
 # Courses Fetching Url
 URLS = []
+
+# Gap Time Between Two Searches (in Seconds)
+FREQUENCY = 30

@@ -10,8 +10,8 @@ def parse(content):
     soup = BeautifulSoup(content, 'lxml')
 
     if soup.find('title'):
-        notify(SMTP_RECIPIENTS, "REFRESH COOKIES", "If you receive this email, please check your FIC account and refresh cookies")
-        exit('refresh your cookies')
+        notify(SMTP_RECIPIENTS, "Refresh Cookies", "If you receive this email, please check your FIC account and refresh cookies")
+        exit('Refresh your cookies')
 
     inputs = soup.find_all('input')
 
@@ -21,5 +21,5 @@ def parse(content):
             print course, datetime.datetime.now()
             message = "Course " + course + " is available to enroll at " + str(datetime.datetime.now()) + "\n\n" + ENROLLMENT_URL
             if course not in emails:
-                notify(SMTP_RECIPIENTS, "FIC COURSE AVAILABLE!!!", message)
+                notify(SMTP_RECIPIENTS, "FIC Course Available", message)
                 emails.append(course)
