@@ -31,3 +31,10 @@ URLS = []
 
 # Gap Time Between Two Searches (in Seconds)
 FREQUENCY = 30
+
+# ----------------------- App Constants (Do NOT Change Unless You Know What You Doing) -----------------------
+
+ENROLLMENT_URL = "https://learning.fraseric.ca/enrolment/confirmation"
+COMMA_ASCII = "%2C"
+
+ENROLLMENT_PAGE = "https://learning.fraseric.ca/enrolment/units"

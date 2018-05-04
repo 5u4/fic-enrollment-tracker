@@ -1,11 +1,10 @@
 from requester import request
 from parser import parse
 import time, datetime
-from config import URLS, FREQUENCY, SMTP_RECIPIENTS
+from config import URLS, FREQUENCY, SMTP_RECIPIENTS, ENROLLMENT_PAGE
 from sender import notify
 
 counter = 0
-ENROLLMENT_URL = "https://learning.fraseric.ca/enrolment/units"
 
 while True:
     # clear email sending list every 10 iterations
@@ -24,7 +23,7 @@ while True:
         for course in courses:
             if course not in emails:
                 message = "Course " + course + " is available to enroll at " + \
-                          str(datetime.datetime.now()) + "\n\n" + ENROLLMENT_URL
+                          str(datetime.datetime.now()) + "\n\n" + ENROLLMENT_PAGE
                 notify(SMTP_RECIPIENTS, "FIC Course Available", message)
                 emails.append(course)
 
