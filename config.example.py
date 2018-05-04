@@ -4,7 +4,7 @@ SMTP_PWD = "password"
 SMTP_RECIPIENTS=["email@example.com"]
 
 # FIC Credentials
-COOKIE = {
+COOKIES = {
     "__utma": "",
     "__utmz": "",
     "NVT": ""

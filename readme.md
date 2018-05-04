@@ -36,20 +36,41 @@ Only Gmail is supported. Also requires to turn off [less secure apps](https://my
 
 ### COOKIES
 
-`COOKIE` can be get from developer tool -> network when login in FIC website
+`COOKIES` can be get from developer tool -> network when login in FIC website
 
 ### COURSES 
 
 You need to get the course id from developer tool -> elements when enrolling courses
 
-Some sample courses: `U2HA_STAT203_ident_530321`, `U2HA_ENGL112_ident_532508`
+Some sample courses: 
+ - `U2HA_STAT203_ident_530321`, 
+ - `U2HA_ENGL112_ident_532508`
 
 ### URL
 
 You need to get the url from developer tool -> network when click on a course and see its lists
 
-Some sample urls: `https://learning.fraseric.ca/enrolment/enrol?page=1&course=U2HA&subj=STAT203&dojo.preventCache=...`,
-`https://learning.fraseric.ca/enrolment/enrol?page=1&course=U2HA&subj=ENGL112&dojo.preventCache=...`
+Some sample urls: 
+ - `https://learning.fraseric.ca/enrolment/enrol?page=1&course=U2HA&subj=STAT203&dojo.preventCache=...`, 
+ - `https://learning.fraseric.ca/enrolment/enrol?page=1&course=U2HA&subj=ENGL112&dojo.preventCache=...`
+
+## Auto Enrollment
+
+Enrollment script is added but requires additional edit to be use.
+
+### Example
+
+```python
+from enroller import enroll
+
+courses = ["530321", "532508", "529463"]
+
+# enroll courses with id 530321, 532508 and 529463
+enroll(courses)
+
+```
+
+Note: The numbers in `courses` are the last six digits numbers from developer tool -> elements when enrolling courses
 
 ## Screenshots
 

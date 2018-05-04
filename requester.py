@@ -1,9 +1,9 @@
 import requests
-from config import COOKIE, HEADERS, SMTP_RECIPIENTS
+from config import COOKIES, HEADERS, SMTP_RECIPIENTS
 from sender import notify
 
 def request(url):
-    response = requests.get(url, cookies=COOKIE, headers=HEADERS)
+    response = requests.get(url, cookies=COOKIES, headers=HEADERS)
 
     if response.status_code == 200:
         return response
