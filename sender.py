@@ -2,21 +2,18 @@ import smtplib
 from config import SMTP_USER, SMTP_PWD
 
 def notify(recipients, subject, body):
-    FROM = SMTP_USER
-    TO = recipients
-    SUBJECT = subject
-    TEXT = body
+    # build smtp message
+    message = """From: %s\nTo: %s\nSubject: %s\n\n%s""" % \
+              (SMTP_USER, ", ".join(recipients), subject, body)
 
-    message = """From: %s\nTo: %s\nSubject: %s\n\n%s
-    """ % (FROM, ", ".join(TO), SUBJECT, TEXT)
-
+    # send email
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.ehlo()
         server.starttls()
         server.login(SMTP_USER, SMTP_PWD)
-        server.sendmail(FROM, TO, message)
+        server.sendmail(SMTP_USER, recipients, message)
         server.close()
-        print 'successfully sent the mail'
+        print 'Email sent'
     except:
-        print "failed to send mail"
+        print "Failed to send mail"
